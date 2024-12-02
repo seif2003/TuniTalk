@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 listener: (context, state) {
                   if (state is AuthSuccess) {
-                    Navigator.pushNamed(context, '/chatPage');
+                    Navigator.pushNamedAndRemoveUntil(context, '/conversationPage', (router) => false);
                   } else if (state is AuthFailure) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
@@ -76,7 +76,9 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               SizedBox(height: 20,),
-              LoginPrompt(title: "Don't have an account ?", subtitle: "click here to register", onTap: (){})
+              LoginPrompt(title: "Don't have an account ?", subtitle: "click here to register", onTap: (){
+                Navigator.pushNamed(context, '/register');
+              })
 
             ],
           ),
