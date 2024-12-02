@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tunitalk/core/theme.dart';
+import 'package:tunitalk/features/chat/presentation/pages/chat_page.dart';
 import 'package:tunitalk/features/conversation/presentation/bloc/conversations_bloc.dart';
 import 'package:tunitalk/features/conversation/presentation/bloc/conversations_event.dart';
 import 'package:tunitalk/features/conversation/presentation/bloc/conversations_state.dart';
@@ -89,10 +90,18 @@ class _ConversationsPageState extends State<ConversationsPage> {
                         itemCount: state.conversations.length,
                         itemBuilder: (context, index){
                           final conversation = state.conversations[index];
-                          return _buildMessageTile(
-                              conversation.participantName,
-                              conversation.lastMessage,
-                              conversation.lastMessageTime.toString()
+                          return GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                              ChatPage(conversationId: conversation.id,
+                                  mate: conversation.participantName)
+                              ));
+                            },
+                            child: _buildMessageTile(
+                                conversation.participantName,
+                                conversation.lastMessage,
+                                conversation.lastMessageTime.toString()
+                            ),
                           );
                         },
                       );
@@ -107,6 +116,14 @@ class _ConversationsPageState extends State<ConversationsPage> {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.push(context, 
+                //MaterialPageRoute(builder: (context) =>  ContactPage())
+            );
+          },
+        backgroundColor: DefaultColors.buttonColor,
+      child: Icon(Icons.contacts),),
     );
   }
 
