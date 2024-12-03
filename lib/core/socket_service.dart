@@ -17,7 +17,7 @@ class SocketService {
     try {
       String token = await _storage.read(key: 'token') ?? '';
       _socket = IO.io(
-        'http://10.0.2.2:3000',
+        'https://tunitalk.seifd.me',
         IO.OptionBuilder()
             .setTransports(['websocket'])
             .disableAutoConnect()
