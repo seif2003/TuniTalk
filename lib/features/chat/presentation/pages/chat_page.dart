@@ -58,7 +58,7 @@ class _ChatPageState extends State<ChatPage> {
       title: Row(
         children: [
           CircleAvatar(
-            backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/6858/6858504.png'),
+            backgroundImage: NetworkImage('https://static.thenounproject.com/png/2265555-200.png'),
             ),
             SizedBox(
               width: 10,
@@ -72,11 +72,14 @@ class _ChatPageState extends State<ChatPage> {
       ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        actions: [
+        /*actions: [
           IconButton(onPressed: (){},
               icon: Icon(Icons.search)
           )
-        ],
+        ],*/
+        iconTheme: IconThemeData(
+          color: Theme.of(context).textTheme.bodyMedium?.color, // Set the desired color for the back button
+        ),
       ),
       body: Column(
         children: [

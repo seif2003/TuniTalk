@@ -2,8 +2,16 @@ abstract class ContactsEvent {}
 
 class FetchContacts extends ContactsEvent {}
 
-class AddContacts extends ContactsEvent {
+class CheckOrCreateConversation extends ContactsEvent {
+  final String contactId;
+  final String contactName;
+
+  CheckOrCreateConversation(this.contactId,this.contactName);
+
+}
+
+class AddContact extends ContactsEvent {
   final String email;
 
-  AddContacts(this.email);
+  AddContact(this.email);
 }

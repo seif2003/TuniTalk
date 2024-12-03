@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class FontSizes {
   static const small = 12.0; // Correction de l'orthographe
-  static const standard = 14.0; // Correction de l'orthographe
-  static const standardUp = 16.0; // Correction de l'orthographe
-  static const medium = 20.0;
-  static const large = 28.0;
+  static const standard = 18.0; // Correction de l'orthographe
+  static const standardUp = 20.0; // Correction de l'orthographe
+  static const medium = 24.0;
+  static const large = 30.0;
 }
 
 class DefaultColors {
@@ -25,24 +25,24 @@ class AppTheme {
       primaryColor: Colors.white,
       scaffoldBackgroundColor: const Color(0xFF1B202D),
       textTheme: TextTheme(
-        titleMedium: GoogleFonts.alegreyaSans(
+        titleMedium: GoogleFonts.nunito(
           fontSize: FontSizes.standardUp,
           color: Colors.white,
         ),
 
-        titleLarge: GoogleFonts.alegreyaSans(
+        titleLarge: GoogleFonts.nunito(
           fontSize: FontSizes.large,
           color: Colors.white,
         ),
-        bodySmall: GoogleFonts.alegreyaSans(
+        bodySmall: GoogleFonts.nunito(
           fontSize: FontSizes.small,
           color: Colors.white,
         ),
-        bodyMedium: GoogleFonts.alegreyaSans(
+        bodyMedium: GoogleFonts.nunito(
           fontSize: FontSizes.standard,
           color: Colors.white,
         ),
-        bodyLarge: GoogleFonts.alegreyaSans(
+        bodyLarge: GoogleFonts.nunito(
           fontSize: FontSizes.standardUp,
           color: Colors.white,
         ),

@@ -4,10 +4,10 @@ import 'package:tunitalk/features/contact/data/datasources/contacts_remote_data_
 import 'package:tunitalk/features/contact/domain/entities/contact_entity.dart';
 import 'package:tunitalk/features/contact/domain/repositories/contacts_repository.dart';
 
-class ContactsRepositoryImpl implements ContactRepository {
+class ContactsRepositoryImpl implements ContactsRepository {
   final ContactsRemoteDataSource remoteDataSource ;
 
-  ContactsRepositoryImpl(this.remoteDataSource);
+  ContactsRepositoryImpl({required this.remoteDataSource});
 
   @override
   Future<void> addContact({required String email}) async{

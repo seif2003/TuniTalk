@@ -16,6 +16,7 @@ class ContactsRemoteDataSource {
     );
     if (response.statusCode == 200) {
       List data = jsonDecode(response.body);
+      print("data:$data");
       return data.map((json) => ContactsModel.fromJson(json)).toList();
     }else {
       throw Exception('Failed to fetch contacts');
@@ -27,7 +28,10 @@ class ContactsRemoteDataSource {
     final response = await http.post(
         Uri.parse('$baseUrl/contacts'),
         body: jsonEncode({'contactEmail': email}),
-          headers: {'Authorization': 'Bearer $token'}
+        headers: {
+          'Authorization': 'Bearer $token',
+          'Content-Type': 'application/json'
+        }
       );
     if (response.statusCode != 201) {
       throw Exception('Failed to add contact');

@@ -2,4 +2,6 @@ import 'package:tunitalk/features/conversation/domain/entities/conversation_enti
 
 abstract class ConversationRepository {
   Future<List<ConversationEntity>> fetchConversation();
+
+  Future<String> checkOrCreateConversation({ required String contactId});
 }

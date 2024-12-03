@@ -2,12 +2,12 @@ import 'package:tunitalk/features/contact/domain/entities/contact_entity.dart';
 import 'package:tunitalk/features/contact/domain/repositories/contacts_repository.dart';
 
 class FetchContactUseCase {
-  final ContactRepository contactRepository;
+  final ContactsRepository contactsRepository;
 
-  FetchContactUseCase({required this.contactRepository});
+  FetchContactUseCase({required this.contactsRepository});
 
   Future<List<ContactEntity>> call() async {
-    return await contactRepository.fetchContacts();
+    return await contactsRepository.fetchContacts();
   }
 
 

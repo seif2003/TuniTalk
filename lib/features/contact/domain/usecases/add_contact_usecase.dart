@@ -1,12 +1,12 @@
 import 'package:tunitalk/features/contact/domain/repositories/contacts_repository.dart';
 
 class AddContactUseCase  {
-  final ContactRepository contactRepository;
+  final ContactsRepository contactsRepository;
 
-  AddContactUseCase({required this.contactRepository});
+  AddContactUseCase({required this.contactsRepository});
 
   Future<void> call({required String email}) async {
-    return await contactRepository.addContact(email: email);
+    return await contactsRepository.addContact(email: email);
   }
 
 

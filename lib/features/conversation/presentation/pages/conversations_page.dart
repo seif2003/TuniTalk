@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tunitalk/core/theme.dart';
 import 'package:tunitalk/features/chat/presentation/pages/chat_page.dart';
+import 'package:tunitalk/features/contact/presentation/pages/contacts_page.dart';
 import 'package:tunitalk/features/conversation/presentation/bloc/conversations_bloc.dart';
 import 'package:tunitalk/features/conversation/presentation/bloc/conversations_event.dart';
 import 'package:tunitalk/features/conversation/presentation/bloc/conversations_state.dart';
@@ -26,22 +27,24 @@ class _ConversationsPageState extends State<ConversationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Messages",
-        style:Theme.of(context).textTheme.titleLarge
-      ),
+        title: Text(
+          "Messages",
+          style:Theme.of(context).textTheme.titleLarge
+        ),
         centerTitle: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarHeight: 70,
         actions: [
-          IconButton(onPressed: (){},
-              icon: Icon(Icons.search)
-          )
+          /*IconButton(onPressed: (){},
+              icon: Icon(Icons.search,color: Theme.of(context).textTheme.bodyMedium?.color,)
+          )*/
         ],
       ),
       body: Column (
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          /*
           Padding (
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: Text(
@@ -64,7 +67,7 @@ class _ConversationsPageState extends State<ConversationsPage> {
 
               ],
             ),
-          ),
+          ),*/
 
           SizedBox(
             height:10,
@@ -119,11 +122,10 @@ class _ConversationsPageState extends State<ConversationsPage> {
       floatingActionButton: FloatingActionButton(
           onPressed: (){
             Navigator.push(context, 
-                //MaterialPageRoute(builder: (context) =>  ContactPage())
+                MaterialPageRoute(builder: (context) =>  ContactsPage())
             );
           },
-        backgroundColor: DefaultColors.buttonColor,
-      child: Icon(Icons.contacts),),
+      child: Icon(Icons.contacts,color: Theme.of(context).scaffoldBackgroundColor,),),
     );
   }
 
@@ -132,7 +134,7 @@ class _ConversationsPageState extends State<ConversationsPage> {
       contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       leading : CircleAvatar(
         radius: 30,
-        backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/6858/6858504.png'),
+        backgroundImage: NetworkImage('https://static.thenounproject.com/png/2265555-200.png'),
 
       ),
         title: Text(
@@ -161,15 +163,13 @@ class _ConversationsPageState extends State<ConversationsPage> {
       children: [
         CircleAvatar(
           radius: 30,
-          backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/6858/6858504.png'),
+          backgroundImage: NetworkImage('https://static.thenounproject.com/png/2265555-200.png'),
         ),
         SizedBox(height: 10),
         Text(
           name,
           style: Theme.of(context).textTheme.bodyMedium
         ),
-
-
       ],
     ),
     );
