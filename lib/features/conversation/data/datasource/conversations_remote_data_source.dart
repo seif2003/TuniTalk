@@ -5,7 +5,7 @@ import 'package:tunitalk/features/conversation/data/models/conversation_model.da
 import 'package:http/http.dart' as http;
 
 class ConversationsRemoteDataSource {
-  final String baseUrl = 'http://10.0.2.2:3000';
+  final String baseUrl = 'https://tunitalk.seifd.me';
   final _storage = FlutterSecureStorage();
 
   Future<List<ConversationModel>> fetchConversations() async {

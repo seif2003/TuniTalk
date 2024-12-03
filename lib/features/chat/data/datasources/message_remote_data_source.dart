@@ -5,7 +5,7 @@ import 'package:tunitalk/features/chat/data/models/message_model.dart';
 import 'package:tunitalk/features/chat/domain/entities/message_entity.dart';
 import 'package:http/http.dart' as http;
 class MessageRemoteDataSource {
-  final String baseUrl = 'http://10.0.2.2:3000';
+  final String baseUrl = 'https://tunitalk.seifd.me';
   final _storage = FlutterSecureStorage();
 
   Future<List<MessageEntity>> fetchMessages (String conversationId) async {

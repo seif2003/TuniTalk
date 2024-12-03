@@ -5,7 +5,7 @@ import 'package:tunitalk/features/contact/data/models/contacts_model.dart';
 import 'package:http/http.dart' as http;
 class ContactsRemoteDataSource {
   
-  final String baseUrl = 'http://10.0.2.2:3000';
+  final String baseUrl = 'https://tunitalk.seifd.me';
   final _storage = FlutterSecureStorage();
 
   Future<List<ContactsModel>> fetchContacts() async {
